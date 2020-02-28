@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fU3-Pg-qJO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="Zau-pg-DhQ">
+            <objects>
+                <viewController restorationIdentifier="GameViewController" storyboardIdentifier="GameViewController" id="fU3-Pg-qJO" customClass="GameViewController" customModule="SenlaTennis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lqq-Sk-BEn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игрок 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4W-fN-RDe">
+                                <rect key="frame" x="16" y="60" width="61" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игрок 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrU-0H-gHa">
+                                <rect key="frame" x="335" y="60" width="63" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nUA-pV-hhm">
+                                <rect key="frame" x="0.0" y="220.5" width="414" height="675.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fU3-Pg-qJO" id="ZF9-6f-8o8"/>
+                                    <outlet property="delegate" destination="fU3-Pg-qJO" id="t0b-dg-WfO"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="kO1-lJ-CUx">
+                                <rect key="frame" x="77.5" y="96.5" width="259" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-4R-A4V">
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="firstPlayerScoreButtonTapped:" destination="fU3-Pg-qJO" eventType="touchUpInside" id="Ncq-k5-2oH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPq-SJ-bC6">
+                                        <rect key="frame" x="124" y="30" width="11" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PC1-kz-QMs">
+                                        <rect key="frame" x="210" y="0.0" width="49" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondPlayerScoreButtonTapped:" destination="fU3-Pg-qJO" eventType="touchUpInside" id="nDv-ug-OU0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAF-aW-EXR">
+                                <rect key="frame" x="29.5" y="134.5" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="0KZ-qn-bcG"/>
+                                    <constraint firstAttribute="height" constant="32" id="ubW-WC-RVr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCN-At-RuS">
+                                <rect key="frame" x="352.5" y="134.5" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Zf7-wb-VfJ"/>
+                                    <constraint firstAttribute="width" constant="32" id="urG-9V-jW1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kO1-lJ-CUx" firstAttribute="top" secondItem="L4W-fN-RDe" secondAttribute="bottom" constant="16" id="All-jI-i7P"/>
+                            <constraint firstItem="jAF-aW-EXR" firstAttribute="centerY" secondItem="kO1-lJ-CUx" secondAttribute="centerY" id="H0a-zo-psD"/>
+                            <constraint firstItem="nUA-pV-hhm" firstAttribute="top" secondItem="kO1-lJ-CUx" secondAttribute="bottom" constant="16" id="Mld-2f-JpG"/>
+                            <constraint firstItem="FCN-At-RuS" firstAttribute="leading" secondItem="PC1-kz-QMs" secondAttribute="trailing" constant="16" id="OOM-yh-RHG"/>
+                            <constraint firstItem="L4W-fN-RDe" firstAttribute="leading" secondItem="gTc-AR-0cK" secondAttribute="leading" constant="16" id="Qmb-Wa-BGj"/>
+                            <constraint firstAttribute="bottom" secondItem="nUA-pV-hhm" secondAttribute="bottom" id="WbP-QP-qbe"/>
+                            <constraint firstItem="kO1-lJ-CUx" firstAttribute="centerX" secondItem="gTc-AR-0cK" secondAttribute="centerX" id="Zsg-QO-nYL"/>
+                            <constraint firstItem="kO1-lJ-CUx" firstAttribute="leading" secondItem="jAF-aW-EXR" secondAttribute="trailing" constant="16" id="bjA-lz-YMF"/>
+                            <constraint firstItem="SrU-0H-gHa" firstAttribute="top" secondItem="gTc-AR-0cK" secondAttribute="top" constant="16" id="bvc-Bu-yq4"/>
+                            <constraint firstItem="FCN-At-RuS" firstAttribute="centerY" secondItem="PC1-kz-QMs" secondAttribute="centerY" id="gZP-Ya-Fth"/>
+                            <constraint firstItem="gTc-AR-0cK" firstAttribute="trailing" secondItem="nUA-pV-hhm" secondAttribute="trailing" id="iKa-Ca-eFA"/>
+                            <constraint firstItem="gTc-AR-0cK" firstAttribute="trailing" secondItem="SrU-0H-gHa" secondAttribute="trailing" constant="16" id="jqu-WF-HRq"/>
+                            <constraint firstItem="L4W-fN-RDe" firstAttribute="top" secondItem="gTc-AR-0cK" secondAttribute="top" constant="16" id="t7A-Dj-ya4"/>
+                            <constraint firstItem="nUA-pV-hhm" firstAttribute="leading" secondItem="gTc-AR-0cK" secondAttribute="leading" id="yb2-EH-FrD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gTc-AR-0cK"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstPlayerLabel" destination="L4W-fN-RDe" id="Yhc-4U-fF5"/>
+                        <outlet property="firstPlayerScoreButton" destination="ZCT-4R-A4V" id="uR8-nH-aoY"/>
+                        <outlet property="firstPlayerServiceView" destination="jAF-aW-EXR" id="9kk-30-Xk2"/>
+                        <outlet property="gameLogsTableView" destination="nUA-pV-hhm" id="hPy-5D-4qT"/>
+                        <outlet property="secondPlayerLabel" destination="SrU-0H-gHa" id="yvK-Cc-5C3"/>
+                        <outlet property="secondPlayerScoreButton" destination="PC1-kz-QMs" id="qah-lf-h9X"/>
+                        <outlet property="secondPlayerServiceView" destination="FCN-At-RuS" id="B3w-Y4-cJ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fee-e4-ChC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-539.13043478260875" y="-321.42857142857139"/>
+        </scene>
+    </scenes>
+</document>

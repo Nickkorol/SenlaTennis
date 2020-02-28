@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LAH-Xn-TiW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Start View Controller-->
+        <scene sceneID="o4d-Rc-Th5">
+            <objects>
+                <viewController storyboardIdentifier="GameStartViewController" id="QAM-c2-kdY" customClass="GameStartViewController" customModule="SenlaTennis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R7f-Y6-B4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="vgG-7U-D0R">
+                                <rect key="frame" x="162" y="420.5" width="90" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEF-qS-EyO">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                                        <state key="normal" title="Начать игру"/>
+                                        <connections>
+                                            <action selector="gameSettingsButtonTapped:" destination="QAM-c2-kdY" eventType="touchUpInside" id="0fm-26-GLh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-Xd-YDb">
+                                        <rect key="frame" x="0.0" y="79" width="90" height="30"/>
+                                        <state key="normal" title="История игр"/>
+                                        <connections>
+                                            <action selector="gameHistoryButtonTapped:" destination="QAM-c2-kdY" eventType="touchUpInside" id="9Ro-kW-ZCB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vgG-7U-D0R" firstAttribute="centerY" secondItem="Mi8-kB-WrE" secondAttribute="centerY" id="ARz-E2-BLc"/>
+                            <constraint firstItem="vgG-7U-D0R" firstAttribute="centerX" secondItem="Mi8-kB-WrE" secondAttribute="centerX" id="qXN-dV-oP5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mi8-kB-WrE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lHw-VV-yuN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLM-Fy-Ss8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028.985507246377" y="145.98214285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m0X-kS-FGi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LAH-Xn-TiW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rdl-e7-3FU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QAM-c2-kdY" kind="relationship" relationship="rootViewController" id="jJV-dt-k8x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRP-hw-Alu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118.84057971014494" y="145.98214285714286"/>
+        </scene>
+    </scenes>
+</document>

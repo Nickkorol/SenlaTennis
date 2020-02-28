@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fU3-Pg-qJO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Results History View Controller-->
+        <scene sceneID="Zau-pg-DhQ">
+            <objects>
+                <viewController restorationIdentifier="ResultsHistoryViewController" storyboardIdentifier="ResultsHistoryViewController" id="fU3-Pg-qJO" customClass="ResultsHistoryViewController" customModule="SenlaTennis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lqq-Sk-BEn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HJs-Gb-Hpt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fU3-Pg-qJO" id="xRw-nX-CCE"/>
+                                    <outlet property="delegate" destination="fU3-Pg-qJO" id="Chi-DI-dhJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HJs-Gb-Hpt" firstAttribute="top" secondItem="lqq-Sk-BEn" secondAttribute="top" id="3KF-i8-3Gs"/>
+                            <constraint firstItem="HJs-Gb-Hpt" firstAttribute="leading" secondItem="gTc-AR-0cK" secondAttribute="leading" id="JOO-u1-04h"/>
+                            <constraint firstAttribute="bottom" secondItem="HJs-Gb-Hpt" secondAttribute="bottom" id="cdc-ov-anD"/>
+                            <constraint firstItem="gTc-AR-0cK" firstAttribute="trailing" secondItem="HJs-Gb-Hpt" secondAttribute="trailing" id="hJM-Eo-gLQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gTc-AR-0cK"/>
+                    </view>
+                    <connections>
+                        <outlet property="gamesTableView" destination="HJs-Gb-Hpt" id="UyL-uj-N40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fee-e4-ChC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="-321"/>
+        </scene>
+    </scenes>
+</document>

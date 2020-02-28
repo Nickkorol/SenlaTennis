@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="heu-ic-rgN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Settings View Controller-->
+        <scene sceneID="Zau-pg-DhQ">
+            <objects>
+                <viewController restorationIdentifier="GameSettingsViewController" storyboardIdentifier="GameSettingsViewController" id="fU3-Pg-qJO" customClass="GameSettingsViewController" customModule="SenlaTennis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lqq-Sk-BEn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-Vr-Yny">
+                                <rect key="frame" x="16" y="104" width="398" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сколько игроков?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-81-mcE">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8eS-GU-tXX">
+                                        <rect key="frame" x="196" y="0.0" width="69" height="32"/>
+                                        <segments>
+                                            <segment title="2"/>
+                                            <segment title="4"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlDidPress:" destination="fU3-Pg-qJO" eventType="valueChanged" id="fKD-To-LJH"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tt-ry-hoP">
+                                        <rect key="frame" x="281" y="0.0" width="117" height="31"/>
+                                        <state key="normal" title="Начать игру"/>
+                                        <connections>
+                                            <action selector="doneDidPress:" destination="fU3-Pg-qJO" eventType="touchUpInside" id="iyI-wx-rgp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QAf-Bh-Clb">
+                                <rect key="frame" x="0.0" y="151" width="414" height="745"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fU3-Pg-qJO" id="Smo-1X-wGB"/>
+                                    <outlet property="delegate" destination="fU3-Pg-qJO" id="DNM-5l-T5g"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QAf-Bh-Clb" firstAttribute="top" secondItem="j9q-Vr-Yny" secondAttribute="bottom" constant="16" id="8IV-1w-HHx"/>
+                            <constraint firstItem="gTc-AR-0cK" firstAttribute="trailing" secondItem="QAf-Bh-Clb" secondAttribute="trailing" id="CjI-IK-dnI"/>
+                            <constraint firstItem="gTc-AR-0cK" firstAttribute="trailing" secondItem="j9q-Vr-Yny" secondAttribute="trailing" id="EO3-uA-81f"/>
+                            <constraint firstItem="j9q-Vr-Yny" firstAttribute="top" secondItem="gTc-AR-0cK" secondAttribute="top" constant="16" id="IcT-N3-W2M"/>
+                            <constraint firstItem="QAf-Bh-Clb" firstAttribute="leading" secondItem="gTc-AR-0cK" secondAttribute="leading" id="cCB-WH-xPG"/>
+                            <constraint firstItem="j9q-Vr-Yny" firstAttribute="leading" secondItem="gTc-AR-0cK" secondAttribute="leading" constant="16" id="oQi-75-vzk"/>
+                            <constraint firstAttribute="bottom" secondItem="QAf-Bh-Clb" secondAttribute="bottom" id="xBb-tt-Zw5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gTc-AR-0cK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3J6-jg-hxq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zh3-Z8-LLF">
+                            <connections>
+                                <action selector="addNewPlayer:" destination="fU3-Pg-qJO" id="IKa-O6-Ndn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="3tt-ry-hoP" id="vkX-k1-P1A"/>
+                        <outlet property="numberOfPlayersSegmentedControl" destination="8eS-GU-tXX" id="Feg-HP-ABk"/>
+                        <outlet property="playersNamesTableView" destination="QAf-Bh-Clb" id="21I-0C-upr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fee-e4-ChC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371.01449275362324" y="-321.42857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0K5-Ep-7qr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="heu-ic-rgN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7B1-fG-Tp7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fU3-Pg-qJO" kind="relationship" relationship="rootViewController" id="vhl-Uf-trT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ngv-YI-fgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-539.13043478260875" y="-321.42857142857139"/>
+        </scene>
+    </scenes>
+</document>
